@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JK 영어 단어장</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1 class="logo">JK 영어 단어장</h1>
+    <button class="logout-button hidden" id="logoutButton">로그아웃</button>
+  </header>
+
+  <div class="popup-bg hidden" id="deletePopup">
+    <div class="popup-box">
+      <h2>단어 삭제</h2>
+      <p>정말 이 단어를 삭제할까요?</p>
+
+      <div class="popup-buttons">
+        <button class="cancel-btn" id="cancelDeleteButton">취소</button>
+        <button class="delete-btn" id="confirmDeleteButton">삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-bg hidden" id="editPopup">
+    <div class="popup-box">
+      <h2>단어 수정</h2>
+
+      <input type="text" id="editEnglishInput" placeholder="단어">
+      <input type="text" id="editKoreanInput" placeholder="의미">
+
+      <div class="popup-buttons">
+        <button class="cancel-btn" id="cancelEditButton">취소</button>
+        <button class="ok-btn" id="confirmEditButton">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <section class="card" id="loginSection">
+      <h2>로그인</h2>
+
+      <input type="text" id="loginId" placeholder="아이디">
+      <input type="password" id="loginPw" placeholder="비밀번호">
+
+      <button id="loginButton">로그인</button>
+
+      <p>
+        계정이 없나요?
+        <span id="showRegister">회원가입</span>
+      </p>
+    </section>
+
+    <section class="card hidden" id="registerSection">
+      <h2>회원가입</h2>
+
+      <input type="text" id="registerId" placeholder="아이디">
+      <input type="password" id="registerPw" placeholder="비밀번호">
+      <input type="password" id="registerPwCheck" placeholder="비밀번호 확인">
+
+      <button id="registerButton">회원가입</button>
+
+      <p>
+        이미 계정이 있나요?
+        <span id="showLogin">로그인</span>
+      </p>
+    </section>
+
+    <section class="hidden" id="homeSection">
+      <div id="wordbookList">
+        <div id="wordbookList"></div>
+      </div>
+
+      <button class="floating-button" id="createWordbookButton">+</button>
+    </section>
+
+    <section class="card hidden" id="createBookSection">
+      <h2>단어장 만들기</h2>
+
+      <input type="text" id="bookNameInput" placeholder="단어장 이름을 입력하세요">
+
+      <button id="saveBookButton">단어장 생성</button>
+    </section>
+
+    <section class="hidden" id="bookDetailSection">
+      <div class="book-top">
+        <button id="backButton">←</button>
+        <h2 id="bookTitle">단어장</h2>
+        <button id="addWordButton">+</button>
+
+      </div>
+
+      <button id="toggleWordListButton" class="toggle-list-btn">
+        단어 리스트 접기
+      </button>
+
+      <div id="wordListArea">
+        <p class="empty-word">아직 추가된 단어가 없습니다.</p>
+      </div>
+    </section>
+
+    <section class="card hidden" id="addWordSection">
+      <h2>단어 추가</h2>
+
+      <input type="text" id="englishInput" placeholder="단어를 입력해 주세요.">
+      <input type="text" id="koreanInput" placeholder="의미를 입력해 주세요.">
+
+      <button id="saveWordButton">단어 추가</button>
+    </section>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

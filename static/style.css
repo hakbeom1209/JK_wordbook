@@ -1,0 +1,448 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background: #4f7cff;
+    color: white;
+    padding: 20px 16px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.logo {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px 16px 100px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(50, 70, 120, 0.12);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 24px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 14px;
+    border: 1px solid #d9deec;
+    border-radius: 16px;
+    background: #f9faff;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4f7cff;
+    box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.15);
+}
+
+.card button {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 15px;
+    background: #4f7cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card button:active {
+    transform: scale(0.98);
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+span {
+    color: #4f7cff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#wordbookList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.wordbook-card {
+    width: 100%;
+    min-height: 64px;
+    background: white;
+    border-radius: 999px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.wordbook-card h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.wordbook-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.floating-button {
+    position: fixed;
+    right: 22px;
+    bottom: 26px;
+    width: 66px;
+    height: 66px;
+    border: none;
+    border-radius: 50%;
+    background: #4f7cff;
+    color: white;
+    font-size: 42px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 22px rgba(79, 124, 255, 0.45);
+    cursor: pointer;
+}
+
+.floating-button:active {
+    transform: scale(0.94);
+}
+
+#createBookSection {
+    margin-top: 20px;
+}
+
+.book-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.book-top h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.book-top button {
+    border: none;
+    background: none;
+    font-size: 34px;
+    color: #4f7cff;
+    cursor: pointer;
+}
+
+.empty-word {
+    margin-top: 100px;
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+}
+
+@media (max-width: 360px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 20px 16px;
+    }
+
+    .wordbook-card {
+        min-height: 58px;
+    }
+
+    .floating-button {
+        width: 60px;
+        height: 60px;
+        font-size: 38px;
+    }
+}
+
+.word-item {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.word-item h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #222;
+}
+
+.word-item p {
+    margin: 0;
+    text-align: left;
+    font-size: 17px;
+    color: #666;
+}
+
+.word-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.word-row:last-child {
+    margin-bottom: 0;
+}
+
+.word-label {
+    min-width: 45px;
+    color: #4f7cff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.word-row strong {
+    font-size: 18px;
+    color: #222;
+}
+
+.word-item {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.word-content {
+    flex: 1;
+}
+
+.word-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.word-row:last-child {
+    margin-bottom: 0;
+}
+
+.word-label {
+    min-width: 45px;
+    color: #4f7cff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.word-row strong {
+    font-size: 18px;
+    color: #222;
+}
+
+.word-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.word-actions button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f4f6fb;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+}
+
+.edit-word-btn {
+    color: #4f7cff;
+}
+
+.delete-word-btn {
+    color: #ff4d4d;
+}
+
+.word-actions button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f4f6fb;
+
+    font-size: 18px;
+}
+
+.edit-word-btn {
+    color: #4f7cff;
+}
+
+.delete-word-btn {
+    color: #ff4d4d;
+}
+
+.popup-bg {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.popup-box {
+    width: 100%;
+    max-width: 360px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 24px 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.popup-box h2 {
+    margin-top: 0;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.popup-buttons button {
+    border: none;
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    background: #e9ecf5;
+    color: #555;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.ok-btn {
+    background: #4f7cff;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.toggle-list-btn {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 16px;
+    background: white;
+    color: #4f7cff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+    position: relative;
+}
+
+.logout-button {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 8px 10px;
+
+    background: white;
+    color: #4f7cff;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
